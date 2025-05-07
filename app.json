@@ -1,0 +1,19 @@
+{
+  "name": "Basic Postgres Test App",
+  "description": "A barebones Python app that tracks room temps using postgresql.",
+  "repository": "https://github.com/GitxGot/herokuptgs_basic",
+  "keywords": ["python", "django"],
+  "env": {
+    "DJANGO_SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "./manage.py test --debug-mode"
+      }
+    }
+  }
+}
