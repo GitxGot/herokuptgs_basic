@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('house.urls')),  # Make sure this matches your app name
+    path('', include('house.url')),
 ]
 
 
