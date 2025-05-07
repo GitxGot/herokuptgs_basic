@@ -6,6 +6,7 @@ Flask_SQLAlchemy
 pytest
 Flask-Script
 django>=5.1,<5.2
+dj-database-url
 
 psycopg[c]; sys_platform == "linux"
 psycopg[binary]; sys_platform != "linux"
