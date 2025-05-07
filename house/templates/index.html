@@ -92,7 +92,7 @@
             event.preventDefault();
             const roomName = document.getElementById('roomName').value;
             try {
-                const response = await fetch('/api/room', {
+                const response = await fetch('/room', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name: roomName }),
@@ -110,10 +110,10 @@
             const roomId = document.getElementById('roomId').value;
             const temperature = document.getElementById('temperature').value;
             const dateInput = document.getElementById('date').value;
-            // If empty, date will be undefined -> API uses current datetime
+            // If empty, date will be undefined -> uses current datetime
             const date = dateInput ? dateInput : undefined;
             try {
-                const response = await fetch('/api/temperature', {
+                const response = await fetch('/temperature', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ room: roomId, temperature: temperature, date: date }),
@@ -135,7 +135,7 @@
             resultDiv.style.display = 'none';
             resultDiv.textContent = '';
             try {
-                const response = await fetch(`/api/room/${roomId}`);
+                const response = await fetch(`/room/${roomId}`);
                 if (!response.ok) {
                     throw new Error('Room not found');
                 }
