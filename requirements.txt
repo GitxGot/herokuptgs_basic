@@ -4,6 +4,7 @@ SQLAlchemy
 Flask_SQLAlchemy
 pytest
 Flask-Script
+requests
 
 django>=5.1,<5.2
 gunicorn>=23,<24
