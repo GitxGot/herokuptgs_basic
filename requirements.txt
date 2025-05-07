@@ -6,3 +6,6 @@ Flask_SQLAlchemy
 pytest
 Flask-Script
 django>=5.1,<5.2
+
+psycopg[c]; sys_platform == "linux"
+psycopg[binary]; sys_platform != "linux"
