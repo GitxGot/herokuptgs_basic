@@ -34,7 +34,7 @@ connection = psycopg2.connect(url)
 def index():
     return render_template('index.html')
 
-@app.route('/add_room', methods=['POST'])
+@app.route('/api/add_room', methods=['POST'])
 def create_room():
     data = request.get_json()
     name = data["name"]
@@ -46,7 +46,7 @@ def create_room():
     return {"id": room_id, "message": f"Room {name} created."}, 201
 
 
-@app.route('/add_temperature', methods=['POST'])
+@app.route('/api/add_temperature', methods=['POST'])
 def add_temp():
     data = request.get_json()
     temperature = data["temperature"]
@@ -62,7 +62,7 @@ def add_temp():
     return {"message": "Temperature added."}, 201
 
 
-@app.route('/average_temperature', methods=['GET'])
+@app.route('/api/average_temperature', methods=['GET'])
 def get_global_avg():
     with connection:
         with connection.cursor() as cursor:
@@ -74,7 +74,7 @@ def get_global_avg():
 
 
 # @app.get("/api/room/<int:room_id>")
-@app.route('/room/<int:room_id>', methods=['GET'])
+@app.route('/api/room/<int:room_id>', methods=['GET'])
 def get_room_all(room_id):
     with connection:
         with connection.cursor() as cursor:
