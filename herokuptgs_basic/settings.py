@@ -115,7 +115,7 @@ ROOT_URLCONF = "herokuptgs_basic.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'house' / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
